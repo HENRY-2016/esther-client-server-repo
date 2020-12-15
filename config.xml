@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.esther.client" version = "1.0.0">
+
+    <name>palm </name>
+    <description>Palm Court Restaurant Client App </description>
+
+    <author email="jacob2016henry@gmail.com" href="http://www.sample.web">Jacob Henry</author>
+    <content src="index.html" />
+    
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14"/>
+    
+    <!-- use latest version of phonegap...this version is displayed in the phonegap web -->
+    <preference name="phonegap-version" value="cli-6.5.0" /> 
+	
+
+    <allow-navigation href="*" />
+
+    <!-- This url is allowed to open to server -->
+    <!-- <allow-intent href="http://10.42.0.1:4444/*" /> -->
+
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="market:*" />
+
+    <!-- =========================================== -->
+
+        <!-- Allow images, xhrs, etc. to google.com -->
+        <!-- Enable requests to content: URLs -->
+        <access origin="content:///*" />
+
+        <!-- Don't block any requests -->
+        <access origin="*" />
+    <!-- =========================================== -->
+
+    <icon src="static/imgs/icone.png" />
+    <plugin name="cordova-plugin-whitelist" />
+</widget>
+
+

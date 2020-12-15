@@ -1,0 +1,299 @@
+
+
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>| PILOA |</title>
+	<script src="static/js/jquery.min.js" ></script>
+	<script src="static/js/main.js"></script>
+	<script src="static/js/menu.js"> </script>
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="static/css/w3.css">
+</head>
+<script>
+function Onoline_Fatch_User_Online_Data ()
+	{
+		Add_Menu_Gallery_Iframe ("piloa_menu");
+		Load_avenu_menu_options ("piloa_options","piloa_menu_options")
+		GetAvenuePrices ("prices-from-server-label", "piloa_price_endpoint");
+	}
+
+function Check_Network_Status ()
+{
+	display_date ();
+	Onoline_Fatch_User_Online_Data ()
+	// if (!navigator.onLine) {Create_Offline_Label ();}
+	// else if (navigator.onLine) 
+	// 	{
+	// 		Add_Menu_Gallery_Iframe ("piloa_menu");
+	// 		Load_avenu_menu_options ("piloa_options","piloa_menu_options");
+	// 		GetAvenuePrices ("prices-from-server-label", "piloa_price_endpoint");
+	// 	}
+}		
+</script>
+<body  class="main_body" onload="Check_Network_Status ()" ononline="Onoline_Fatch_User_Online_Data ()">
+		
+<div id="main-header">
+	<div  id= "Navigetion" class="header">
+			<!-- ======= CLOSE ====== -->
+		<span href="javascript:void(0)" class="closebtn" onclick="closeNavi()"><label class="close-navi-span"> &times;</label></span><!-- closs the navi -->
+		<div id="our-avenues-menu-label-div"> 
+			<label onclick="Load_index ()" class="our-avenues-label" > Home </label>
+		</div><br>
+		<div id="our-avenues-menu-label-div"> 
+				<label class="our-avenues-label" > Our Menu</label>
+			</div><br>
+			<div id="menu-items-div">
+				<center>
+					<!-- <a><label >Avenues</label></a> -->
+					<a><label onclick="Load_food_view ()">Food</label></a>
+					<a><label onclick="Load_chips_view ()">Chips</label></a>
+					<a><label onclick="Load_piloa_view ()">Piloa</label></a>
+					<a><label onclick="Load_drinks_view ()">Drinks</label></a>
+					<a><label onclick="Load_salads_view ()">Salads</label></a>
+					<a><label onclick="Load_chicken_view ()">Chicken</label></a>
+					<a><label onclick="Load_luwombo_view ()">Luwombo</label></a>
+					<a><label onclick="Load_local_dish_view ()">Local Dish</label></a>
+					<a><label onclick="Load_break_fast_view ()">Break Fast</label></a>
+					<a><label onclick="Load_beverages_view_ ()">Beverages</label></a>
+					<a><label onclick="Load_goat_meat_view ()">Goat's Meat</label></a>
+					<a><label onclick="Load_beef_liver_view ()">Beef / Liver</label></a>
+				</center>
+			</div>
+			<br>
+			<!-- <div id="our-avenues-menu-label-div"> 
+				<label class="our-avenues-label" onclick="Load_developer ()" > Developer</label>
+			</div><br> -->
+	</div>
+	<div id="NaviDiv">
+		<label class="open-side-navi-label" onclick="openMenus()">&#9776;</label>
+		<label class="kone-label">The Palm Court</label>
+	</div>
+<script>
+function openMenus(){document.getElementById("Navigetion").style.width = "240px"}
+function closeNavi (){document.getElementById("Navigetion").style.width = "0"}  
+</script>
+
+</div> <!-- main-header-->
+<div id="main-body"><br>
+	<center><label class="todays-date-label">Today :: <span id="date-id"></span> </label></center>
+
+	<center><label id="prices-from-server-label" style="display:none" > </label></center>
+	<center><label id="created-prices" style="display:none" ></label></center>
+	
+	<center> <div id="offline-label-div" ></div> </center>
+	<center><div id="menu-pics-div"></div></center><br>
+	
+	<center>
+		<label class="my-order-label fontstyles" onclick="ShowCustomerData ()">My Order</label><br>
+		<label class="make-order-label fontstyles" onclick="document.getElementById('id01').style.display='block'">Make Order</label><br>
+	</center>
+	
+	<div id="id01" class="w3-modal">
+		<div class="w3-modal-content w3-animate-top w3-card-4">
+			<div class="w3-container first-pop-up-window">
+
+				<center><br>
+					<form action="http://109.74.192.210:6060/piloa_customer_order" method="POST" id="customers-order-form" class="order-form">
+						<br>
+						<label class="order-form-lables fontstyles" > Name</label><br>
+						<input id="name" class="form_input" type="text" placeholder="Your Name" name="name" autocomplete="off" required><br>
+				
+						<label class="order-form-lables fontstyles">Avenue</label><br>
+						<select id="piloa_options" class="form_input_select" onchange="write_piloa_types ()"><option>Select Avenue</option></select><br>
+						<input id="avenu" class="form_input" type="text" readonly placeholder="Piloa with ... " name="food" autocomplete="off" required><br>
+				
+				
+						<label class="order-form-lables fontstyles">Contacts</label><br>
+						<input id="contacts" class="form_input" type="text" placeholder="Phone Number" name="contacts" minlength="1" maxlength="10" autocomplete="off" required><br>
+				
+						<label class="order-form-lables fontstyles" >Location</label><br>
+						<input id="location" class="form_input" type="text" placeholder="Where To Deliver" name="location" autocomplete="off" required><br>
+						
+						<label class="order-form-lables fontstyles" id="amount-label">Amount</label><br>
+						<input class="form_input"  placeholder=":: ::" autocomplete="off" id="price-input" name="price" readonly><br><br>
+
+						<label class="order-form-lables fontstyles" id="amount-label">Payment Method</label><br>
+						<select id="paymentmthd" name="Paymentmthd" class="form_input_select" >
+							<option>select option</option>
+							<option value="Online" >Online</option>
+							<option value="On Delivery" >On Delivery</option>
+						</select><br>
+
+						<label class="order-form-lables fontstyles" id="email-label">Email Address</label><br>
+						<input class="form_input"  placeholder="your email address" autocomplete="off" name="email" id="email" required><br><br>
+
+				
+						<button class="cancle-btn fontstyles" type="reset"> Clear</button><br><br>
+						<button type="button" class="submit-btn fontstyles" onclick="ValidateCustomerData ()">Next</button><br><br>
+						<button class="close-btn fontstyles" type="button" onclick="document.getElementById('id01').style.display='none'"> Close</button><br><br>
+					</form>
+					</center>
+			</div>
+		</div>			
+	</div>		
+	<div id="id02" class="w3-modal">
+	<div class="w3-modal-content w3-animate-top w3-card-4">
+		<header class="w3-container w3-teal"> 
+			<span onclick="document.getElementById('id02').style.display='none'" 
+			class="w3-button w3-display-topright">&times;</span>
+			<h2>Your Order is ..</h2>
+		</header>
+		<div class="w3-container">
+			<center><br>
+				<label class="order-form-lables fontstyles">Name </label><br>
+				<label class="order-form-confirm-lables" id="NameLabel"> </label><br><br>
+
+				<label class="order-form-lables fontstyles"> Avenue</label><br>
+				<label class="order-form-confirm-lables" id="FoodLabel"> </label><br><br>
+
+				<label class="order-form-lables fontstyles">  Contacts </label><br>
+				<label class="order-form-confirm-lables" id="ContactsLabel"> </label><br><br>
+				
+				<label class="order-form-lables fontstyles"> Location </label><br>
+				<label class="order-form-confirm-lables" id="LocationLabel"> </label><br><br>
+
+				<label class="order-form-lables fontstyles"> Payment Method </label><br>
+				<label class="order-form-confirm-lables" id="PaymentmthdLabel"> </label><br><br>
+
+				<label class="order-form-lables fontstyles"> Email Address </label><br>
+				<label class="order-form-confirm-lables" id="EmailLabel"> </label><br><br>
+
+				<label class="order-form-lables fontstyles" id="amount-label">Amount</label><br>
+				<label class="form_input" id="price-label"> </label><br><br>
+				
+				<button class="cancle-btn fontstyles" type="button" onclick="document.getElementById('id02').style.display='none'"> Cancle</button><br><br>
+				<button class="submit-confirm-btn fontstyles" type="button"  onclick="SubmitCustomerData ()"> Submit</button><br>
+				
+			</center>
+		</div>
+		</div>
+	</div>
+
+
+
+	<div id="id011111" class="w3-modal">
+	<div class="w3-modal-content w3-animate-top w3-card-4">
+		<div class="w3-container">
+			<center><br>
+				<label class="order-form-lables fontstyles">Your Piloa Order Was </label><br><br>
+				<div id="customer-offline-data-div">
+
+				</div>
+				
+				<button class="close-btn fontstyles" type="button" onclick="document.getElementById('id011111').style.display='none'"> Close</button><br><br>
+			</center>
+		</div>
+		</div>
+	</div>
+	<div id="id013" class="w3-modal">
+			<div class="w3-modal-content w3-animate-top w3-card-4">
+				<div class="w3-container">
+					<center><br>
+						<label class="order-form-lables fontstyles">Payments </label><br><br>
+
+						<label class="order-form-lables fontstyles" id="amount-label">Payment method</label><br>
+						<form id="payments-form">
+						<select id="payment-method" class="form_input_select">
+							<option>select option</option>
+							<option value="Online" >Online</option>
+							<option value="On Delivery" >On Delivery</option>
+						</select><br>
+
+						<label class="order-form-lables fontstyles" id="email-label">Email Address</label><br>
+						<input class="form_input"  placeholder=":: ::" autocomplete="off" id="email"><br><br>
+					</form>
+						<button type="button" class="submit-btn fontstyles" onclick="ValidatePaymentsCustomerData ()">Submit</button><br><br>
+						<button class="close-btn fontstyles" type="button" onclick="document.getElementById('id013').style.display='none'"> Close</button><br><br>
+					</center>
+				</div>
+				</div>
+			</div>
+
+<script>
+	function OpenPopUpConfirmation ()
+	{
+		// get_price ();
+		name = document.getElementById("name").value;
+		food = document.getElementById("avenu").value;
+		contacts = document.getElementById("contacts").value;
+		cust_location = document.getElementById("location").value;
+		price = document.getElementById("price-input").value
+		paymentmthd = document.getElementById("paymentmthd").value;
+		email = document.getElementById("email").value;
+	
+		document.getElementById("NameLabel").innerHTML = name;
+		document.getElementById("FoodLabel").innerHTML = food;
+		document.getElementById("ContactsLabel").innerHTML = contacts;
+		document.getElementById("LocationLabel").innerHTML = cust_location;
+		document.getElementById("PaymentmthdLabel").innerHTML = paymentmthd;
+		document.getElementById("EmailLabel").innerHTML = email;
+		document.getElementById("price-label").innerHTML = price
+		document.getElementById('id02').style.display='block';
+	}
+	
+function write_piloa_types ()
+{
+	avenutype = document.getElementById("piloa_options").value;
+	document.getElementById("avenu").value = avenutype;
+	setTimeout(CalculatePrice, 2000)
+}
+
+function CalculatePrice ()
+{
+	let avenutype = document.getElementById("avenu").value;
+	let loaded_prices = document.getElementById("prices-from-server-label").innerText
+	let convertedjsobject = JSON.parse(loaded_prices)
+	
+	let price = parseInt(convertedjsobject[avenutype]);
+	let formatedprice = price.toLocaleString();
+	document.getElementById("price-input").value = formatedprice;
+}
+function ValidateCustomerData ()
+{
+	let state = document.forms["customers-order-form"].reportValidity();
+	if (state != true) { return;}
+	else {OpenPopUpConfirmation ();}
+}
+function ValidatePaymentsCustomerData ()
+{
+	let state = document.forms["payments-form"].reportValidity();
+	if (state != true) { return;}
+	else {SubmitCustomerData ();}
+}
+function SubmitCustomerData ()
+{
+
+	document.forms["customers-order-form"].submit();
+	// ProcessCustomerDataSubmision ('piloa_customer_order')
+	SaveCustomerOrder();
+	setTimeout(closepopup ,1000)
+}	
+function closepopup (){document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='none';}
+
+
+function SaveCustomerOrder ()
+{
+	name = document.getElementById("name").value;
+	food = document.getElementById("avenu").value;
+	contacts = document.getElementById("contacts").value;
+	cust_location = document.getElementById("location").value;
+	price = document.getElementById("price-input").value;
+	paymentmthd = document.getElementById("paymentmthd").value;
+	email = document.getElementById("email").value;
+
+	data = '<label class="order-form-lables fontstyles"> Name </label> ' +'<br>'+ name +'<br>'+'<br>'+ '<label class="order-form-lables fontstyles"> Avenue</label>'+'<br>'+food+'<br>'+'<br>'+'<label class="order-form-lables fontstyles">  Contacts </label>' +'<br>'+contacts+'<br>'+'<br>'+'<label class="order-form-lables fontstyles">  Location </label>'+'<br>'+cust_location+'<br>'+'<br>'+'<label class="order-form-lables fontstyles">  Payment Method </label>'+'<br>'+paymentmthd+'<br>'+'<br>'+'<label class="order-form-lables fontstyles">  Email Address </label>'+'<br>'+email+'<br>'+'<br>'+'<label class="order-form-lables fontstyles">  Amount </label>'+'<br>'+price+'<br>'+'<br>';
+	localStorage.setItem("piloaorder",data);
+}
+function ShowCustomerData (){document.getElementById('id011111').style.display='block';ShowCustomerOrder ();}
+function ShowCustomerOrder (){document.getElementById("customer-offline-data-div").innerHTML = localStorage.getItem("piloaorder");}
+	
+</script>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+

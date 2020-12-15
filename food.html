@@ -1,0 +1,95 @@
+
+
+<html>
+<head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title> | FOOD |</title>
+	<script src="static/js/jquery.min.js" ></script>
+	<script src="static/js/main.js"></script>
+	<script src="static/js/menu.js"> </script>
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="static/css/w3.css">
+</head>
+<script>
+function Onoline_Fatch_User_Online_Data (){Add_Menu_Gallery_Iframe ("food_menu");}
+function Check_Network_Status ()
+{
+	display_date ();
+	Onoline_Fatch_User_Online_Data ()
+	// if (!navigator.onLine) {Create_Offline_Label ();}
+	// else if (navigator.onLine) {Add_Menu_Gallery_Iframe ("food_menu");}
+}		
+</script>
+<body  class="main_body" onload="Check_Network_Status ()" ononline="Onoline_Fatch_User_Online_Data ()">
+		
+<div id="main-header">
+	<div  id= "Navigetion" class="header">
+			<!-- ======= CLOSE ====== -->
+		<span href="javascript:void(0)" class="closebtn" onclick="closeNavi()"><label class="close-navi-span"> &times;</label></span><!-- closs the navi -->
+		<div id="our-avenues-menu-label-div"> 
+			<label onclick="Load_index ()" class="our-avenues-label" > Home </label>
+		</div><br>
+		<div id="our-avenues-menu-label-div"> 
+				<label class="our-avenues-label" > Our Menu</label>
+			</div><br>
+			<div id="menu-items-div">
+				<center>
+					<!-- <a><label >Avenues</label></a> -->
+					<a><label onclick="Load_food_view ()">Food</label></a>
+					<a><label onclick="Load_chips_view ()">Chips</label></a>
+					<a><label onclick="Load_piloa_view ()">Piloa</label></a>
+					<a><label onclick="Load_drinks_view ()">Drinks</label></a>
+					<a><label onclick="Load_salads_view ()">Salads</label></a>
+					<a><label onclick="Load_chicken_view ()">Chicken</label></a>
+					<a><label onclick="Load_luwombo_view ()">Luwombo</label></a>
+					<a><label onclick="Load_local_dish_view ()">Local Dish</label></a>
+					<a><label onclick="Load_break_fast_view ()">Break Fast</label></a>
+					<a><label onclick="Load_beverages_view_ ()">Beverages</label></a>
+					<a><label onclick="Load_goat_meat_view ()">Goat's Meat</label></a>
+					<a><label onclick="Load_beef_liver_view ()">Beef / Liver</label></a>
+					
+				</center>
+			</div>
+			<br>
+			<!-- <div id="our-avenues-menu-label-div"> 
+				<label class="our-avenues-label" onclick="Load_developer ()" > Developer</label>
+			</div><br> -->
+	</div>
+	<div id="NaviDiv">
+		<label class="open-side-navi-label" onclick="openMenus()">&#9776;</label>
+		<label class="kone-label">The Palm Court</label>
+	</div>
+<script>
+function openMenus(){document.getElementById("Navigetion").style.width = "240px"}
+function closeNavi (){document.getElementById("Navigetion").style.width = "0"}  
+</script>
+
+</div> <!-- main-header-->
+<div id="main-body"><br>
+	<center><label class="todays-date-label">Today :: <span id="date-id"></span> </label></center>
+
+	<center> <div id="offline-label-div" ></div> </center>
+	<center><div id="menu-pics-div"></div></center><br>
+	
+</div>
+<center><br>
+	<label class="order-form-lables fontstyles">Payments </label><br><br>
+
+	<label class="order-form-lables fontstyles" id="amount-label">Payment method</label><br>
+	<form id="payments-form" action="http://127.0.0.1:8000/index.php" method="POST" >
+	<!-- <form id="payments-form" > -->
+	<select id="payment-method" class="form_input_select">
+		<option>select option</option>
+		<option value="Online" >Online</option>
+		<option value="On Delivery" >On Delivery</option>
+	</select><br>
+
+	<label class="order-form-lables fontstyles" id="email-label">Email Address</label><br>
+	<input class="form_input"  placeholder=":: ::" autocomplete="off" name="email" id="email"><br><br>
+	<input type="submit" value="submit" >
+</form>
+	<button type="button" class="submit-btn fontstyles" onclick="ProcessPhpCustomerDataSubmision ()">Submit</button><br><br>
+</center>
+</body>
+</html>
+

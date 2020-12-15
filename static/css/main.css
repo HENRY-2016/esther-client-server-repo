@@ -1,0 +1,402 @@
+
+
+.main_body {
+    /* background-image: url("../imgs/body-bg.png"); */
+    background-color:#b8307c;
+    /* #a21369; */
+    /* background-color: #f1b2d2;  	#C0C0C0; */
+}
+
+/*=======================================================================================================*/
+                                            /*
+                                               +++++++++++++++++++++++++ ++
+                                               +                          +
+                                               +   index page   +
+                                               +                          +
+                                               ++++++++++++++++++++++++++++
+                                            */
+
+.index-labels
+{
+    font-size: 15px;
+    font-weight:bold;
+    color:#E6E6FA;
+    font-family:Times New Roman Times, serif;
+}
+.index-labels-title
+{
+    font-size: 18px;
+    font-weight:bold;
+    color:#E6E6FA;
+    font-family:Times New Roman Times, serif;
+}
+.home-log-img
+{
+    height: 230px;
+    width: 80%;
+    margin-top: -35px;
+    border-radius: 45px;
+}
+.home_page_fonts
+{
+    font-size: 20px;
+    font-weight:bold;
+    color:#E6E6FA;
+    font-family:Times New Roman Times, serif;
+}
+.home-holdings-btn
+    {
+        background-color:#708090;
+        border:none;
+        width:50%;
+        height:33px;
+        border-radius:18px;
+    }
+li
+{
+    font-size: 15px;
+}
+/* li:hover {background-color: black;} */
+.index-sliding-imgs-div
+{
+    background-color: #CD5C5C;
+    width: 70%;
+    height: 70%;
+}
+.index-text {color:blue}
+.index-seperator{background-color:#DCDCDC; height: 2px;}
+
+/*=======================================================================================================*/
+                                            /*
+                                               +++++++++++++++++++++++++ ++
+                                               +                          +
+                                               +   Menus Pages              +
+                                               +                          +
+                                               ++++++++++++++++++++++++++++
+                                            */
+
+
+.menu-iframe
+{
+    width:100%;
+    height: 100%;
+    margin-top: -2px;
+    align-content: center;
+}
+
+.todays-date-label
+{
+    font-size: 20px;
+    font-family:Times New Roman Times, serif;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+}
+
+.Offline-Label
+{
+    font-size: 25px;
+    font-family:Times New Roman Times, serif;
+    color:red;
+    font-weight: bold;
+    font-style: italic;
+    background-color: white;
+    border-bottom: 2px solid blue
+}
+
+/*=======================================================================================================*/
+                                            /*
+                                               +++++++++++++++++++++++++ ++
+                                               +                          +
+                                               +   Order Form Page              +
+                                               +                          +
+                                               ++++++++++++++++++++++++++++
+                                            */
+
+
+
+.order-form
+{
+    background-color: white;
+    border-radius: 50px;
+    width: 85%;
+}
+
+
+.form_input
+{
+    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+    display: block;
+    color: #00008B;
+	width: 50%;
+	padding: 7px;
+	border: none;
+	border-bottom: 2px solid blue;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+    text-align: center;
+
+}
+.form_input_select
+{
+
+	outline: none;
+    display: block;
+    color: #00008B;
+    font-size: 15px;
+	width: 50%;
+	padding: 7px;
+	border: 2px solid black;
+	background: transparent;
+	margin-bottom: 10px;
+	/* font: 16px Arial, Helvetica , sans-serif; */
+	height: 45px;
+    text-align: center;
+
+}
+
+.form_input:focus {border-bottom: 2px solid black;}
+
+.order-form-lables
+{
+    font-size: 15px;
+    font-family:Times New Roman Times, serif;
+    font-weight: bold;
+    color: black;
+}
+.order-form-confirm-lables
+{
+    font-size: 15px;
+    font-family:Times New Roman Times, serif;
+    font-weight: bold;
+    color: blue;
+}
+.submit-btn
+{
+    background-color:blue;
+    border:none;
+    width:40%;
+    height:40px;
+    border-radius:18px;
+    color: white;
+
+}
+.submit-confirm-btn
+{
+    background-color:blue;
+    border:none;
+    width:55%;
+    height:40px;
+    border-radius:18px;
+    color: white;
+
+}
+.cancle-btn
+{
+    background-color:#6495ED;
+    width:30%;
+    height:35px;
+    border-radius:18px;
+    color: white;
+
+}
+.close-btn
+{
+    background-color:#4682B4;
+    width:100%;
+    height:35px;
+    border-radius:18px;
+    color: white;
+}
+/* .first-pop-up-window
+{ */
+    /* background-color: whitesmoke; */
+    /* background-image: url('body-bg.png') */
+/* } */
+
+
+/*=======================================================================================================*/
+                                        /*
+                                            +++++++++++++++++++++++++ ++
+                                            +                          +
+                                            +         MAIN NAVIGETION  +
+                                            +                          +
+                                            ++++++++++++++++++++++++++++
+                                        */
+.LogIconImg
+{
+    margin-top: 10px;
+    width: 70px;
+
+}
+.fontstyles
+{
+    font-size: 20px;
+    font-family:Times New Roman Times, serif;
+    /* font-weight:bold; */
+}
+.close-navi-span
+{
+    background-color:#ca1f7b;
+    border-radius: 60px;
+    color:white;
+    font-style: bold;
+}
+.our-label-menu
+{
+    color:blue;
+    text-decoration:none;
+    transition:0.3s;
+    display:block;
+    padding:10px 10px;
+    background-color: wheat;
+    border-radius: 10px;
+}
+.make-order-label
+{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    width: 80%;
+    display:block;
+    text-align: center;
+    padding:10px 10px;
+    background-color: #a21369;
+    border-radius: 10px;
+}
+.my-order-label
+{
+    color:white;
+    font-style:bold;
+    text-decoration:none;
+    transition:0.3s;
+    width: 50%;
+    display:block;
+    text-align: center;
+    padding:10px 10px;
+    background-color: #a21369;
+    border-radius: 10px;
+}
+.menu-types-btn
+{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    display:block;
+    text-align: center;
+    padding:10px 10px;
+    background-color: #8B8386;
+    border-radius: 10px;
+    width: 100%;
+    font-weight: bold;
+
+}
+.Name-log-icone
+{
+    width: 50%;
+    margin-left: 20%;
+}
+.HomeIcon
+{
+    font-size:36px;
+    color:white;
+    font-weight:bold;
+}
+.header
+{
+    position: fixed;
+    height: 100%;
+    width: 0;
+    padding-top: 60px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /*SLIDER*/
+    background-color:#a21369;
+    
+}
+
+.header a
+{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-style: oblique;
+    display:block;
+    padding:5px 5px;
+    font-size: 20px;
+    font-family:Times New Roman Times, serif;
+}
+
+/* a:hover{background-color:#E6E6FA;} */
+
+.header .closebtn
+{
+
+    position:absolute;
+    right: 2px;
+    margin-left:50px;
+    top:0;
+    font-size:30px;
+
+}
+#menu-items-div
+{
+    background-color:#a21369;
+    /* #A9A9A9;  */
+    /* rgb(0, 174, 255); */
+    border-radius: 10px;
+}
+
+#NaviDiv
+    {
+        /* background-color:#808080; */
+        background-color:#a21369;
+        height:50px;
+    }
+
+/* #footer-div
+{
+    background-color:#808080;
+    height:50px;
+} */
+
+#our-avenues-menu-label-div
+{
+    /* background-color: white; */
+    border-radius: 10px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    text-align: center;
+    display:block;
+    padding:5px 5px;
+    font-size: 20px;
+    font-family:Times New Roman Times, serif;
+}
+
+.open-side-navi-label
+{
+    font-size:35px;
+    cursor:pointer;
+    margin-left: 8px;
+    color: white;
+}
+.kone-label
+{
+    font-size: 20px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: -300px;
+    margin-left: 10px;
+    font-family:Times New Roman Times, serif;
+}
