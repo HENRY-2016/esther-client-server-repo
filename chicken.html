@@ -15,18 +15,20 @@ function Onoline_Fatch_User_Online_Data ()
 		Add_Menu_Gallery_Iframe ("chicken_menu");
 		Load_avenu_menu_options ("chicken_options","chicken_menu_options");
 		GetAvenuePrices ("prices-from-server-label", "chicken_price_endpoint");
+
 	}
 function Check_Network_Status ()
 {
 	display_date ();
-	Onoline_Fatch_User_Online_Data ()
-	// if (!navigator.onLine) {Create_Offline_Label ();}
-	// else if (navigator.onLine) 
-	// 	{
-	// 		Add_Menu_Gallery_Iframe ("chicken_menu");
-	// 		Load_avenu_menu_options ("chicken_options","chicken_menu_options");
-	// 		GetAvenuePrices ("prices-from-server-label", "chicken_price_endpoint");			
-	// 	}
+	// Onoline_Fatch_User_Online_Data ()
+	if (!navigator.onLine) {Create_Offline_Label ();}
+	else if (navigator.onLine) 
+		{
+			Add_Menu_Gallery_Iframe ("chicken_menu");
+		Load_avenu_menu_options ("chicken_options","chicken_menu_options");
+		GetAvenuePrices ("prices-from-server-label", "chicken_price_endpoint");
+		
+		}
 }		
 </script>
 <body  class="main_body" onload="Check_Network_Status ()" ononline="Onoline_Fatch_User_Online_Data ()">

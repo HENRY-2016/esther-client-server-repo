@@ -47,10 +47,16 @@ function SSSSSSSSOnoline_Fatch_User_Online_Data ()
 function Check_Network_Status ()
 {
 	// Hide_All_Divs ()
-	Onoline_Fatch_User_Online_Data ()
-	// if (!navigator.onLine) { Create_Offline_Label_With_Argus ("other-offline-label-div");Create_Offline_Label_With_Argus ("egg-offline-label-div");Create_Offline_Label_With_Argus ("teas-offline-label-div");}
-	// else if (navigator.onLine) 
-	// 	{
+	// Onoline_Fatch_User_Online_Data ()
+	if (!navigator.onLine) { Create_Offline_Label();}
+	else if (navigator.onLine) 
+		{
+			Add_Menu_Gallery_Iframe ("breakfastother_menu");
+	Load_avenu_menu_options ("breakfastother_options","breakfastother_menu_options");
+	GetAvenuePrices ("other-prices-from-server-label", "breakfst_other_price_endpoint");
+	Load_food_menu ();
+	display_date ();
+
 			// other 
 			// Add_Menu_Gallery_Iframe_With_Args ("other-offline-label-div","other-menu-pics-div","breakfastother_menu");
 			// Load_avenu_menu_options ("breakfastother_options","breakfastother_menu_options")
@@ -73,7 +79,7 @@ function Check_Network_Status ()
 			// Load_food_menu ();
 			// display_date ();
 
-		// }
+		}
 }
 
 </script>

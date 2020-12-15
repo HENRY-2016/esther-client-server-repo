@@ -20,14 +20,14 @@ function Onoline_Fatch_User_Online_Data ()
 function Check_Network_Status ()
 {
 	display_date ();
-	Onoline_Fatch_User_Online_Data ()
-    // if (!navigator.onLine) {Create_Offline_Label ();}
-	// else if (navigator.onLine) 
-	// 	{
-	// 		Add_Menu_Gallery_Iframe ("beefliver_menu");
-	// 		Load_avenu_menu_options ("beefliver_options","beefliver_menu_options");
-	// 		GetAvenuePrices ("prices-from-server-label", "beefliver_price_endpoint");
-	// 	}
+	// Onoline_Fatch_User_Online_Data ()
+    if (!navigator.onLine) {Create_Offline_Label ();}
+	else if (navigator.onLine) 
+		{
+			Add_Menu_Gallery_Iframe ("beefliver_menu");
+			Load_avenu_menu_options ("beefliver_options","beefliver_menu_options");
+			GetAvenuePrices ("prices-from-server-label", "beefliver_price_endpoint");
+		}
 }
 
 </script>

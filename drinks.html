@@ -38,10 +38,15 @@ function SSSSSSSSSSSSOnoline_Fatch_User_Online_Data ()
 function Check_Network_Status ()
 {
 	// Hide_drinks_divs ();
-	Onoline_Fatch_User_Online_Data ()
-    // if (!navigator.onLine) { Create_Offline_Label_With_Argus ("soft-drink-offline-label-div");Create_Offline_Label_With_Argus ("fresh-drink-offline-label-div");}
-	// else if (navigator.onLine) 
-	// 	{
+	// Onoline_Fatch_User_Online_Data ()
+    if (!navigator.onLine) { Create_Offline_Label ();}
+	else if (navigator.onLine) 
+		{
+
+		Add_Menu_Gallery_Iframe ("drinkssoft_menu");
+		Load_avenu_menu_options ("drinks_soft_options","drinks_soft_menu_options");
+		GetAvenuePrices ("softdrink-prices-from-server-label", "softdrink_price_endpoint");
+		display_date ();
 			// soft drinks
 			// Add_Menu_Gallery_Iframe_With_Args ("soft-drink-offline-label-div","soft-drink-menu-pics-div","drinkssoft_menu"); 
 			// Add_Menu_Gallery_Iframe_With_Args ("soft-drink-offline-label-div","soft-drink-menu-pics-div","drinkssoft_menu"); 
@@ -59,7 +64,7 @@ function Check_Network_Status ()
 			// Load_avenu_menu_options ("drinks_soft_options","drinks_soft_menu_options");
 			// GetAvenuePrices ("softdrink-prices-from-server-label", "softdrink_price_endpoint");
 			// display_date ();
-		// }
+		}
 }
 
 

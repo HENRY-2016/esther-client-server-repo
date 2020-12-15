@@ -17,9 +17,9 @@ function Check_Network_Status ()
 {
 	display_date ();
 	
-	Onoline_Fatch_User_Online_Data ()
-    // if (!navigator.onLine) {Create_Offline_Label ();}
-    // else if (navigator.onLine) {Add_Menu_Gallery_Iframe ("chips_menu");Load_avenu_menu_options ("chips_options","chips_menu_options");GetAvenuePrices ("prices-from-server-label", "chips_price_endpoint");}
+	// Onoline_Fatch_User_Online_Data ()
+    if (!navigator.onLine) {Create_Offline_Label ();}
+    else if (navigator.onLine) {Add_Menu_Gallery_Iframe ("chips_menu");Load_avenu_menu_options ("chips_options","chips_menu_options");GetAvenuePrices ("prices-from-server-label", "chips_price_endpoint");}
 }
 
 

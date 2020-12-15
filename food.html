@@ -15,9 +15,9 @@ function Onoline_Fatch_User_Online_Data (){Add_Menu_Gallery_Iframe ("food_menu")
 function Check_Network_Status ()
 {
 	display_date ();
-	Onoline_Fatch_User_Online_Data ()
-	// if (!navigator.onLine) {Create_Offline_Label ();}
-	// else if (navigator.onLine) {Add_Menu_Gallery_Iframe ("food_menu");}
+	// Onoline_Fatch_User_Online_Data ()
+	if (!navigator.onLine) {Create_Offline_Label ();}
+	else if (navigator.onLine) {Add_Menu_Gallery_Iframe ("food_menu");}
 }		
 </script>
 <body  class="main_body" onload="Check_Network_Status ()" ononline="Onoline_Fatch_User_Online_Data ()">
@@ -72,24 +72,7 @@ function closeNavi (){document.getElementById("Navigetion").style.width = "0"}
 	<center><div id="menu-pics-div"></div></center><br>
 	
 </div>
-<center><br>
-	<label class="order-form-lables fontstyles">Payments </label><br><br>
 
-	<label class="order-form-lables fontstyles" id="amount-label">Payment method</label><br>
-	<form id="payments-form" action="http://127.0.0.1:8000/index.php" method="POST" >
-	<!-- <form id="payments-form" > -->
-	<select id="payment-method" class="form_input_select">
-		<option>select option</option>
-		<option value="Online" >Online</option>
-		<option value="On Delivery" >On Delivery</option>
-	</select><br>
-
-	<label class="order-form-lables fontstyles" id="email-label">Email Address</label><br>
-	<input class="form_input"  placeholder=":: ::" autocomplete="off" name="email" id="email"><br><br>
-	<input type="submit" value="submit" >
-</form>
-	<button type="button" class="submit-btn fontstyles" onclick="ProcessPhpCustomerDataSubmision ()">Submit</button><br><br>
-</center>
 </body>
 </html>
 
