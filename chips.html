@@ -103,11 +103,12 @@ function closeNavi (){document.getElementById("Navigetion").style.width = "0"}
 				
 						<label class="order-form-lables fontstyles" >Location</label><br>
 						<input id="location" class="form_input" type="text" placeholder="Where To Deliver" name="location" autocomplete="off" required><br>
-						<label class="order-form-lables fontstyles" id="amount-label">Payment Method</label><br>
+						
 						
 						<label class="order-form-lables fontstyles" id="amount-label">Amount</label><br>
 						<input class="form_input"  placeholder=":: ::" autocomplete="off" id="price-input" name="price" readonly><br><br>
 						
+						<label class="order-form-lables fontstyles" id="amount-label">Payment Method</label><br>
 						<select id="paymentmthd" name="Paymentmthd" class="form_input_select" >
 							<option>select option</option>
 							<option value="Online" >Online</option>
@@ -264,6 +265,8 @@ function OpenPopUpConfirmation ()
 	contacts = document.getElementById("contacts").value;
 	cust_location = document.getElementById("location").value;
 	price = document.getElementById("price-input").value
+	paymentmthd = document.getElementById("paymentmthd").value;
+	email = document.getElementById("email").value;
 
 	document.getElementById("NameLabel").innerHTML = name;
 	document.getElementById("FoodLabel").innerHTML = food;

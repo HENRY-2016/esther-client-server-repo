@@ -1,6 +1,6 @@
 
-var src_url = "http://127.0.0.1:6060/";
-// var src_url = "http://109.74.192.210:6060/";
+// var src_url = "http://127.0.0.1:6060/";
+var src_url = "http://109.74.192.210:6060/";
 
 
 function ProcedToPayments (IdDiv){document.getElementById(IdDiv).style.display='block';}
